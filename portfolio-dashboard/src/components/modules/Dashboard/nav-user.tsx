@@ -34,7 +34,7 @@ export function NavUser() {
   const handleLogout = () => {
     logOut();
     if (protectedRoutes.some(route => pathname.match(route))) {
-      router.push('/');
+      router.push('/login');
     }
     setIsLoading(true);
   };

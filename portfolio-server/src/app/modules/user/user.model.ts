@@ -15,6 +15,10 @@ const userSchema = new Schema<IUser, UserModel>(
       lowercase: true,
       trim: true,
     },
+    name: {
+      type: String,
+      default: 'anonymous',
+    },
 
     password: {
       type: String,

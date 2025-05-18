@@ -46,7 +46,7 @@ export function AppSidebar({
       },
       {
         title: 'Dashboard',
-        url: `/${user?.role.toLowerCase()}/dashboard`,
+        url: `/dashboard`,
         icon: LayoutDashboard,
         isActive: true,
       },
