@@ -10,10 +10,13 @@ const projectSchema = new Schema<IProject>({
   frontendGithubRepoLink: { type: String },
   backendGithubRepoLink: { type: String },
   imageUrl: { type: [String], required: true },
-  createdAt: { type: Date, default: Date.now },
+  
+},{
+  timestamps: true,
+  versionKey: false,
 });
 
-// 3. Create the model
+
 const Project: Model<IProject> = model<IProject>('Project', projectSchema);
 
 export default Project;

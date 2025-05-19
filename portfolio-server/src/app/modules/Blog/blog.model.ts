@@ -7,7 +7,10 @@ const blogSchema = new Schema<IBlog>({
   content: { type: String, required: true },
   coverImage: {  type: [String], required: false, default: [] },
   description: { type: String, required: true },
-  createdAt: { type: Date, default: Date.now },
+
+},{
+  timestamps: true,
+  versionKey: false,
 });
 
 const Blog: Model<IBlog> = model<IBlog>('Blog', blogSchema);

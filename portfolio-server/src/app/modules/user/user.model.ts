@@ -52,8 +52,9 @@ const userSchema = new Schema<IUser, UserModel>(
    },
   },
   {
-    timestamps: true,
-  },
+  timestamps: true,
+  versionKey: false,
+},
 );
 userSchema.pre('save', async function (next) {
   this.password = await createHashPassword(
