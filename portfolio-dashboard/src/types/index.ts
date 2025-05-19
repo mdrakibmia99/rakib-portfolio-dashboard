@@ -5,7 +5,7 @@ export type TUser = {
   password: string;
   passwordChangedAt: string | null;
   image: string | null;
-  role: "ADMIN";
+  role: 'admin' | 'user';
   isActive: boolean;
   createdAt: string;
   updatedAt: string;

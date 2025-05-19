@@ -1,4 +1,3 @@
-import { UserRole } from "../user/user.interface";
 
 
 export type TTokenResponse = {
@@ -19,6 +18,6 @@ export interface IJwtPayload {
   userId: string;
   name: string;
   email: string;
-  role: UserRole;
+  role: 'admin' | 'user';
   isBlocked: boolean;
 }

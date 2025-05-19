@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import { Model } from 'mongoose';
-
+export enum UserRole {
+  ADMIN = 'admin',
+}
 
 //create a interface for user
 export interface IUser {
