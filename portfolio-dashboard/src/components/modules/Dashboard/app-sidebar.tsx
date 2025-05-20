@@ -4,7 +4,7 @@ import {
 
   FolderKanban,
   HomeIcon,
-  LayoutDashboard,
+  BookOpen ,
 
   UserCog,
 
@@ -27,15 +27,10 @@ import Link from 'next/link';
 // import Image from 'next/image';
 import { NavMain } from './nav-main';
 import { NavUser } from './nav-user';
-import { useUser } from '@/context/UserContext';
 
 export function AppSidebar({
   ...props
 }: React.ComponentProps<typeof Sidebar> & { collapsed?: boolean }) {
-  const { user } = useUser();
-
- 
-
 
 
   const data = {
@@ -66,6 +61,21 @@ export function AppSidebar({
         },
       ],
     },
+       {
+      title: 'Blogs',
+      url: '/',
+      icon: BookOpen ,
+      items: [
+        {
+          title: 'Add Blog',
+          url: '/add-blog',
+        },
+        {
+          title: 'All Blogs',
+          url: '/blogs',
+        },
+      ],
+    },
       {
         title: 'Profile',
         url: '/profile',
@@ -86,12 +96,10 @@ export function AppSidebar({
                 {/* <div className="grid flex-1 text-left text-sm leading-tight">
                   {collapsed ? <Icon /> : <Logo />}
                 </div> */}
-                <div className="w-full">
-                  {/* <p className="text-black dark:text-white text-lg font-medium z-10">
-                    ThinkGreenly
-                  </p> */}
-                  {/* <Image src={logo} alt="logo" className="h-12 w-12" /> */}
-                  <p>RK</p>
+                <div className="w-full flex items-center justify-center gap-0.5">
+  
+                  <p>Md Rakib Mia</p>
+                  
                 </div>
               </Link>
             </SidebarMenuButton>

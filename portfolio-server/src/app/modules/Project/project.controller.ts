@@ -22,6 +22,7 @@ const projectCreate = catchAsync(async (req: Request, res: Response) => {
     );
     payload.imageUrl = imageUrls;
   }
+  console.log('payload', payload);
   const result = await projectService.createProject(payload);
   sendResponse(res, StatusCodes.OK, 'Project created successfully', result);
 });

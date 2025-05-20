@@ -11,7 +11,7 @@ const app: Application = express();
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(cors({ origin: ['http://localhost:5173'],credentials: true }));
+app.use(cors({ origin: ['http://localhost:5173','http://localhost:3000','http://localhost:3001'],credentials: true }));
 
 // application router
 // all route

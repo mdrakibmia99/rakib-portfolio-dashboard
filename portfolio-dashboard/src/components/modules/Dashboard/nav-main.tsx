@@ -18,6 +18,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
+import { ModeToggle } from "@/components/ModeToggle";
 
 type NavItem = {
   title: string;
@@ -103,6 +104,7 @@ export function NavMain({ items }: { items: NavItem[] }) {
             </Collapsible>
           );
         })}
+        <ModeToggle />
       </SidebarMenu>
     </SidebarGroup>
   );

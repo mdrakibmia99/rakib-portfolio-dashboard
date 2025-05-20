@@ -8,6 +8,7 @@ projectRouter.post(
   '/',
   uploadFile.array('images', 8),
   (req: Request, res: Response, next: NextFunction) => {
+    console.log(req.body, "req.body");
     req.body = JSON.parse(req.body.data);
     next();
   },
