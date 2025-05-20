@@ -2,16 +2,6 @@ import Image from "next/image";
 import { format } from "date-fns";
 import { IBlog } from "@/utils/globalTypes";
 
-interface BlogDetailsProps {
-  blog: {
-    _id: string;
-    title: string;
-    content: string;
-    coverImage: string[];
-    description: string;
-    createdAt: string;
-  };
-}
 
 export default function BlogDetails({ blog }: {blog:IBlog}) {
   return (
