@@ -39,14 +39,9 @@ export default function RootLayout({
         >
           <Provider>
             <Toaster
-              //   richColors
-              //   position="top-center"
-              toastOptions={{
-                style: {
-                  background: "#2ecc71",
-                  border: "none",
-                },
-              }}
+                richColors
+                position="top-center"
+             
             />
             {children}
           </Provider>

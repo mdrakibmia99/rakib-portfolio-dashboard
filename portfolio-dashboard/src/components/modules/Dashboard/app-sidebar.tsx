@@ -2,6 +2,7 @@
 
 import {
 
+  FolderKanban,
   HomeIcon,
   LayoutDashboard,
 
@@ -44,12 +45,27 @@ export function AppSidebar({
         url: '/',
         icon: HomeIcon,
       },
-      {
-        title: 'Dashboard',
-        url: `/dashboard`,
-        icon: LayoutDashboard,
-        isActive: true,
-      },
+      // {
+      //   title: 'Dashboard',
+      //   url: `/dashboard`,
+      //   icon: LayoutDashboard,
+      //   isActive: true,
+      // },
+       {
+      title: 'Projects',
+      url: '/',
+      icon: FolderKanban,
+      items: [
+        {
+          title: 'Add Project',
+          url: '/add-project',
+        },
+        {
+          title: 'All Projects',
+          url: '/projects',
+        },
+      ],
+    },
       {
         title: 'Profile',
         url: '/profile',
