@@ -29,7 +29,25 @@ const updateSkillZodSchema = z.object({
     category: z.string().optional(),
   }),
 });
+
+const skillCategorySchema = z.object({
+  body: z.object({
+    title: z
+      .string()
+      .min(1, { message: 'Title is required' })
+      .max(100, { message: 'Title is too long' })
+      .trim(),
+
+    icon: z
+      .string()
+      .min(1, { message: 'Icon is required' })
+      .trim(),
+  }),
+});
+
+
 export const SkillValidation = {
   createSkillZodSchema,
   updateSkillZodSchema,
+  skillCategorySchema,
 };
