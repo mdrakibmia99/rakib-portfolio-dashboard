@@ -1,16 +1,16 @@
 import ProjectDetails from "@/components/modules/Project/ProjectDetails";
 import { getSpecificProject } from "@/services/Projects";
 import { TProject } from "@/utils/globalTypes";
-import { FC } from "react";
+
 
 interface ProjectPageProps {
-  params: {
-    id: string;
-  };
-}
+    params: Promise<{
+      id: string;
+    }>;
+  }
 
-const ProjectPage: FC<ProjectPageProps> = async ({ params }) => {
-  const { id } = params;
+const ProjectPage = async ({ params }:ProjectPageProps) => {
+  const { id } =await params;
   const { data: project } = await getSpecificProject(id);
 
   return (

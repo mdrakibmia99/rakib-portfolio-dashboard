@@ -1,7 +1,7 @@
 import User from '../user/user.model';
 import QueryBuilder from '../../builder/queryBuilder';
-import { TTokenResponse } from '../Auth/auth.interface';
-import Landlord from '../Landlord/landlord.model';
+
+
 
 const getUsers = async (query: Record<string, unknown>) => {
   const searchableFields = ['name'];
@@ -44,32 +44,10 @@ const deleteUser = async (userId: string) => {
   return result;
 };
 
-const adminGetAllLandLordListing = async (
-  user: TTokenResponse,
-  query: Record<string, unknown>,
-) => {
-  const searchableFields = ['location', 'description', 'bedrooms', 'amenities'];
-  const landlordQuery = new QueryBuilder(
-    Landlord.find(),
-    query,
-  )
-    .search(searchableFields)
-    .filter()
-    .sort()
-    .paginate()
-    .fields();
-
-  const result = await landlordQuery.modelQuery;
-  const meta = await landlordQuery.countTotal();
-  return {
-    meta,
-    result,
-  };
-};
 
 export const adminService = {
   getUsers,
   updateUserRole,
   deleteUser,
-  adminGetAllLandLordListing
+
 };

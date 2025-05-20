@@ -2,7 +2,7 @@ import { StatusCodes } from 'http-status-codes';
 import catchAsync from '../../utils/catchAsync';
 import { adminService } from './admin.service';
 import sendResponse from '../../utils/sendResponse';
-import { TTokenResponse } from '../Auth/auth.interface';
+
 
 const getUsers = catchAsync(async (req, res) => {
   const queryData = req?.query;
@@ -38,20 +38,11 @@ const deleteUser = catchAsync(async (req, res) => {
   });
 });
 
-const adminGetAllLandLordListing = catchAsync(async (req, res) => {
-  const query = req.query;
-  const result = await adminService.adminGetAllLandLordListing(req.user as TTokenResponse,query);
-  sendResponse(
-    res,
-    StatusCodes.OK,
-    'Retrieve all rental listings posted by the landlord',
-    result,
-  );
-});
+
 
 export const adminController = {
   deleteUser,
   getUsers,
   updateUserRole,
-  adminGetAllLandLordListing
+
 };

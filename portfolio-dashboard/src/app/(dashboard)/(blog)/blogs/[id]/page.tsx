@@ -1,16 +1,15 @@
 import BlogDetails from "@/components/modules/Blog/BlogDetails";
 import { getSpecificBlog } from "@/services/Blog";
 import { IBlog } from "@/utils/globalTypes";
-import { FC } from "react";
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-const BlogPage: FC<ProjectPageProps> = async ({ params }) => {
-  const { id } = params;
+const BlogPage = async ({ params }: ProjectPageProps) => {
+  const { id } = await params;
   const { data: blog } = await getSpecificBlog(id);
 
   return (

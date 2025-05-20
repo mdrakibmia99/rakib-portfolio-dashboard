@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 import { useUser } from "@/context/UserContext";
-import Link from "next/link";
+
 import { useRouter } from "next/navigation";
 import { PasswordInput } from "@/components/ui/password-input";
 import { loginValidationSchema } from "./loginValidation";
