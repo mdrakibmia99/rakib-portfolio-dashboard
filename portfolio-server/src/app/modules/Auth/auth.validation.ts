@@ -23,9 +23,16 @@ const updatePasswordValidationSchema = z.object({
   }),
 });
 
+const contactValidationSchema = z.object({
+ body: z.object({ name: z.string().min(2),
+  email: z.string().email(),
+  subjectLine: z.string().min(3),
+  message: z.string(),})
+});
 export const authValidation = {
   loginValidationSchema,
   refreshTokenValidationSchema,
-  updatePasswordValidationSchema
+  updatePasswordValidationSchema,
+  contactValidationSchema
 };
 export type TUserRole = keyof typeof USER_ROLE;

@@ -43,6 +43,16 @@ const updatePassword = catchAsync(async (req, res) => {
     result,
   );
 });
+const contactMessage = catchAsync(async (req, res) => {
+  const result = await authService.contactMessage(req.body);
+
+  sendResponse(
+    res,
+    StatusCodes.OK,
+    'message sent successfully',
+    result,
+  );
+});
 
 
 
@@ -56,4 +66,5 @@ export const authController = {
   refreshToken,
   updatePassword,
   logOut,
+  contactMessage
 };

@@ -13,7 +13,9 @@ import jwt from 'jsonwebtoken';
 import { Response } from 'express';
 import { createHashPassword } from '../../utils/createHashPassword';
 import { comparePassword } from '../../utils/comparePassword';
-import { IAuth, IJwtPayload } from './auth.interface';
+import { IAuth, IContactEmailPayload, IJwtPayload } from './auth.interface';
+import { sendEmail } from '../../utils/sentEmail';
+
 
 type UserPayload = {
   _id: Types.ObjectId;
@@ -155,11 +157,17 @@ const updatePassword = async (
   });
 };
 
-
+const contactMessage = async (payload:IContactEmailPayload) => {
+  const { name,email,subjectLine,message } = payload;
+ 
+  const result = await sendEmail( name,email,subjectLine,message);
+  return sendEmail;
+  
+};
 
 export const authService = {
   loginUser,
   refreshToken,
   updatePassword,
-
+  contactMessage,
 };

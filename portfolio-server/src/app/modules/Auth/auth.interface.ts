@@ -21,3 +21,10 @@ export interface IJwtPayload {
   role: 'admin' | 'user';
   isBlocked: boolean;
 }
+
+export interface IContactEmailPayload  {
+  name: string;
+  email: string;
+  subjectLine: string;
+  message: string;
+};
